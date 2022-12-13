@@ -12,8 +12,12 @@ code {
     monospace;
 }
 
+.navbar-brand img {
+  filter: invert(984%) sepia(19%) saturate(3207%) hue-rotate(100deg) brightness(90%) contrast(70%);
+}
+
 .navbar-brand {
-  color: #df3ca6;
+  color: #fd9a05ec;
 }
 
 .navbar-brand img {
