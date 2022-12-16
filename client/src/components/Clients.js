@@ -12,20 +12,17 @@ const GET_CLIENTS = gql`
     }
 `    
 
-
-  
-
 export default function Clients() {
 
   const { loading, error, data } = useQuery(GET_CLIENTS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Something Went Wrong</p>;
-
-   
-
   
-  {/* If the page is not loading and there is no error, load the table */}
+  {/* 
+      If the page is not loading and there is no error, then load the table. 
+      Null Coalescing Operator
+  */}
   return <> { !loading && !error && (
     <table className='table table-hover mt-3'>
       <thead>
@@ -33,7 +30,7 @@ export default function Clients() {
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
-          <th></th>
+          <th>Remove</th>
         </tr>
       </thead>
       <tbody>
