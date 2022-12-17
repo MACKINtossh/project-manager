@@ -6,6 +6,17 @@ const GET_PROJECTS = gql`
       id
       name
       status
+    }
+  }
+`;
+
+const GET_PROJECT = gql`
+  query getProject($id: ID!) {
+    project(id: $id) {
+      id
+      name
+      description
+      status
       client {
         id
         name
@@ -16,4 +27,4 @@ const GET_PROJECTS = gql`
   }
 `;
 
-export { GET_PROJECTS };
+export { GET_PROJECT, GET_PROJECTS };
