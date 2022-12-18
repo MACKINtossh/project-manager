@@ -3,6 +3,7 @@ import Spinner from "../components/Spinner";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECT } from "../queries/projectQueries";
 import ClientInfo from "../components/ClientInfo";
+import DeleteProjectButton from "../components/DeleteProjectButton";
 
 export default function Project() {
   const { id } = useParams();
@@ -12,11 +13,11 @@ export default function Project() {
 
   if (loading)
     return (
-      <p>
+      <span>
         <Spinner />
-      </p>
+      </span>
     );
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <span>Error: {error.message}</span>;
 
   return (
     <div>
@@ -31,7 +32,10 @@ export default function Project() {
           <h5 className="mt-3">Project Status</h5>
           <p className="lead">{data.project.status}</p>
           
+          
           <ClientInfo client={data.project.client} />
+          
+          <DeleteProjectButton projectId={data.project.id} />
 
         </div>
       )}

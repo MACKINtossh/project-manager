@@ -10,9 +10,9 @@ export default function ProjectCard({ project }) {
               View
             </a>
           </div>
-          <p className=" small">
+          <span className="small">
             Status: <strong>{project.status}</strong>
-          </p>
+          </span>
         </div>
       </div>
     </div>
